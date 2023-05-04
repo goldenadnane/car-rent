@@ -169,7 +169,7 @@
         </div>
         <div class="col-md-4">
             <div class="dashboardTitle">
-                AMG experience admin dashboard
+                CAR experience admin dashboard
             </div>
             <div class="dashboardPic">
                 <img class="dashPic" src="{% static 'images/logooo.png'  %}">
@@ -206,13 +206,11 @@
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-12">
-                            <input class="inputFieldGraph modelGraph"type='text' name='model' placeholder="Our new AMG car">
+                            <input class="inputFieldGraph modelGraph"type='text' name='model' placeholder="Our new car">
                         </div>
                     </div>
                     <div class="row ">
-                        <div class="col-md-3">
-                            <input class="inputFieldGraph performanceData "type='text' name='time' placeholder="0-100/s">
-                        </div>
+
                         <div class="col-md-3">
                             <input class="inputFieldGraph  performanceData "type='text' name='topSpeed' placeholder="top speed">
                         </div>
@@ -346,9 +344,7 @@
                                         </div>
                 
                                     </div>
-                                    <label>Foutrh picture</label>
-                                    <input name="car4" class="inputFieldGraph"type="file" onchange="document.getElementById('pic-4').src = window.URL.createObjectURL(this.files[0])" placeholder="main picture">
-                                </div>  
+                                </div>
                             </div>
                         </div>
                         <div class="col-6">
@@ -367,9 +363,7 @@
                                         </div>
                 
                                     </div>
-                                    <label>Fifth picture</label>
-                                    <input name="car5" class="inputFieldGraph"type="file" onchange="document.getElementById('pic-5').src = window.URL.createObjectURL(this.files[0])" placeholder="main picture">
-                                </div>  
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -383,9 +377,7 @@
 
                 </div>
                 <div class="col-4">
-                    <div class="shortAboutText">
-                        <textarea maxlength="70" rows="2" cols="10" name="shortAbout" class="form-control textareaCar" id="message" placeholder="Short text about the car max 70 character" tabindex="4" required></textarea>
-                    </div>
+
                     <div class="longAboutText">
                         <textarea maxlength="355" rows="5" cols="10" name="about" class="form-control textareaCar" id="message" placeholder="Long text about the car max 355 character" tabindex="4" required></textarea>
                     </div>

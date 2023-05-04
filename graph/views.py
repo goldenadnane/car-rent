@@ -16,13 +16,9 @@ def graph(request):
     year                = Year.objects.all()
     dataHolderPayed     = dataHolder.filter(payed=True).values('orderDate','price')
     favCar              = dataHolder.values('model').annotate(car_count=Count('model'))
-    favPlace            = dataHolder.values_list('pickUp')
     dataCarList         = [val for x in favCar for key,val in x.items()]
-    placeData           = dict(Counter([x for tup in favPlace for x in tup]))
+
     
-    
-    for x_id, place in location:
-        locationValues.append((place, placeData[x_id]))
 
     
 
@@ -69,7 +65,7 @@ def graph(request):
         car3        = request.POST['car3']
 
 
-        addCar      = Car(year_id=yearData,time=time,about=about,shortAbout=shortAbout,model=model,topSpeed=topSpeed,nm=nm,hp=hp,seats=seats,price=price,car1=car1,car2=car2,car3=car3)
+        addCar      = Car(year_id=yearData,about=about,model=model,topSpeed=topSpeed,nm=nm,hp=hp,seats=seats,price=price,car1=car1,car2=car2,car3=car3)
         addCar.save()
 
     context={

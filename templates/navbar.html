@@ -13,8 +13,8 @@
                     <!--page is in demo mode after deployment logic will be made here-->
                     {% if user.is_authenticated  %}
                         <li><a href="{% url 'customer' pk=current.id %}">Customer</a></li>
-                    {% else  %} 
-                        <li><a class="scroll" href="#login">Login</a></li>
+                    {% else  %}
+                        <li><a class="scroll" href="{">Login</a></li>
                     {% endif %}
                     {% if request.user.is_staff  %}
                         <li><a href="{% url 'graph'  %}">Data</a></li>

@@ -96,23 +96,15 @@
 										{% endif  %}
                                 </div>
 									</div>
-									<div class="dataTileCustomer">
-										<div class="dataTilePosCustomer">
-											<div class="dataTextRegister">
-                                        Registration date:
-                                    </div>
-									<div class="dataRegister">
-												{{ current.customer.dateCreated|date:"F j, Y"  }}
-                                    </div>
-										</div>
-									</div>
+
 									<div class="pickTileCustomer">
 										<div class="cityCustomer">
                                     Last pick up:
                                 </div>
 										<div class="cityDataCustomer">
 									{% if lastOrder.pickUp == none %}
-										Need to 
+									{% if lastOrder.pickUp == none %}
+										Need to
 									{% else  %}
 									{{ lastOrder.pickUp }}
 									{% endif  %}
@@ -185,7 +177,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="experienceTitle">
-									Your amg experience history 
+									Your car experience history
 								</div>
 							</div>
 						</div>
@@ -231,7 +223,7 @@
 										</div>
 										<div class="col-5">
 											<div class="infoTable">
-											    {{ x.carModel}}
+											    {{ x.model}}
 											</div>
 										</div>
 										<div class="col-3">
@@ -287,43 +279,15 @@
 												</div>
 											</div>
 											<div class="row no-gutters">
-												<div class="col-8  col-md-6">
-													<div class="addInfo paddingAddInfo">
-														Full fuel :
-													</div>
-												</div>
-												<div class="col-4  col-md-6">
-													<div class="addInfo">
-														{{ x.fullFuel }}
-													</div>
-													
-												</div>
+
+
 											</div>
 											<div class="row no-gutters">
-												<div class="col-8  col-md-6">
-													<div class="addInfo paddingAddInfo">
-														Aditional Insurance :
-													</div>
-												</div>
-												<div class="col-4  col-md-6">
-													<div class="addInfo">
-														{{ x.insurance  }}
-													</div>
-													
-												</div>
+
 											</div>
 											<div class="row no-gutters">
-												<div class="col-8  col-md-6">
-													<div class="addInfo paddingAddInfo">
-														Pick up place :
-													</div>
-												</div>
-												<div class="col-4  col-md-6">
-													<div class="addInfo">
-														{{ x.pickUp   }}
-													</div>
-													
-												</div>
+
+
 											</div>
 											<div class="row no-gutters">
 												<div class="col-8  col-md-6">

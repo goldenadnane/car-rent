@@ -211,7 +211,6 @@ def makeOrder(request, pk):
         'car'          :car,
         'endDate'      :endDate,
         'current'      :current,
-        'insurance'    :insurance,
         'startDate'    :startDate,
         'priceTotal'   :priceTotal,
         'currentOrder' :currentOrder,
