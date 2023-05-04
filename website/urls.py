@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views, utilitiesViews
 from graph import views as graph
+from website import views
 
 
 
@@ -25,8 +25,6 @@ urlpatterns = [
 	path('cancelOrder/<str:pk>/', views.cancelOrder, name='cancelOrder'),
 
 
-	path('pdfView/<str:pk>/', utilitiesViews.ViewPDF.as_view(), name="pdfView"),
-    path('pdfDownload/<str:pk>/', utilitiesViews.DownloadPDF.as_view(), name="pdfDownload"),
 	
 	path('graph', graph.graph, name="graph"),
 

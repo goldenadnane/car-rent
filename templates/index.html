@@ -1,3 +1,5 @@
+
+
 {% block content %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <div class="btnFormPosCar" id="selector">
@@ -22,8 +24,12 @@
                         </select>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <select name="carModel" id="carModelId" class=" selectControlCar" >
+                        <select name="model" id="model" class=" selectControlCar" >
                             <option value="">select the car model</option>
+
+                            {% for i in car  %}
+                                <option value="{{  i.model  }}">{{ i.model  }}</option>
+                            {% endfor  %}
                         </select> 
                     </div>
                 </div>
