@@ -129,7 +129,6 @@ def customerPage(request,pk):
         favCarList  = list(favCar.aggregate(Max('model')).values())
         favCarList  = favCarList[0].replace("['']",'')
 
-    
     context = {
         'current'    :current,
         'orderList'  :orderList,
