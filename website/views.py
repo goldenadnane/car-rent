@@ -71,7 +71,7 @@ def logoutPage(request):
 def loadData(request):
     current   = request.user
     yearData  = request.POST['carYear']
-    modelData = request.POST['carModel']
+    modelData = request.POST['model']
 
   
     if not modelData and not yearData:
