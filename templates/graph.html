@@ -220,14 +220,19 @@
                         <div class="col-md-3">
                             <input class="inputFieldGraph  performanceData "type='text' name='hp' placeholder="horse power">
                         </div>
+                        <div class="col-md-3">
+                            <select name="available" id="" class="pickUpPlace selectYearGraph">
+
+                                <option value={{car.available}}</option>
+
+                            </select>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="lastCarInfo">
                         
                         </div>
-                            <div class="col-md-4">
-                                <input class="inputFieldGraph  performanceData "type='text' name='price' placeholder="price per day">
-                            </div>
+
                             <div class="col-md-4">
                                 <select name="year" id="" class="pickUpPlace selectYearGraph">
                                     {% for i in year  %}
@@ -239,6 +244,10 @@
                             <div class="col-md-4">
                                 <input class="inputFieldGraph  performanceData "type='text' name='seats' placeholder="seats">
                             </div>
+
+                        <div class="col-md-4">
+                            <input class="inputFieldGraph  performanceData "type='price' name='price' placeholder="price">
+                        </div>
                         
                     </div>
                     <div class="row">

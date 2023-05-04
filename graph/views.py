@@ -5,10 +5,11 @@ from django.db.models import Count, Sum, Max
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta, date
 from django.contrib.auth.decorators import login_required
+from website.forms import CarForm
 
 @login_required(login_url='home.html')
 def graph(request):
-
+    car=CarForm()
     dateMoneyList, dataDateMoneyList, locationValues  = [],[],[]
     format              = "%Y/%m/%d"
     current             = request.user
@@ -52,7 +53,7 @@ def graph(request):
     if request.method == 'POST':
                     
         yearData    = year.filter(id=request.POST['year'])[0]
-        time        = request.POST['time']
+        available = request.POST['available']
         about       = request.POST['about']
         model       = request.POST['model']
         topSpeed    = request.POST['topSpeed']
@@ -65,7 +66,7 @@ def graph(request):
         car3        = request.POST['car3']
 
 
-        addCar      = Car(year_id=yearData,about=about,model=model,topSpeed=topSpeed,nm=nm,hp=hp,seats=seats,price=price,car1=car1,car2=car2,car3=car3)
+        addCar      = Car(year_id=yearData,about=about,model=model,topSpeed=topSpeed,nm=nm,hp=hp,seats=seats,price=price,available=available,car1=car1,car2=car2,car3=car3)
         addCar.save()
 
     context={
@@ -75,6 +76,7 @@ def graph(request):
         'dailyMoney'            :dailyMoney,
         'orderedCarsName'       :orderedCarsName,
         'orderedCarsQuantity'   :orderedCarsQuantity,
+        'car':car,
          }
 
 

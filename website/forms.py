@@ -32,4 +32,20 @@ class CustomerUpdate(forms.ModelForm):
             'phone':forms.TextInput(attrs={'class':'inpBoxCustomer'}),
 
 
+
         }
+
+available_choices =(
+    ("AVAILABLE","Available"),
+    ("NOT_AVAILABLE","Not_Available"),
+)
+
+class CarForm(forms.ModelForm):
+    class Meta:
+        model   = Car
+        fields  = ['available']
+        widgets = {
+
+        'available':forms.Select(attrs={'class': 'form-control col-sm-2'})
+
+                }
