@@ -25,7 +25,8 @@ SECRET_KEY = 'rekz5y6bbnt-04sbs@bq*r7^)*fzeiy))n%l3s8q%4w)s*6lzo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['car-rental-with-django.herokuapp.com','198.211.99.20', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['car-rental-with-django.herokuapp.com',
+                 '198.211.99.20', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'AMG.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,10 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Agence',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -130,9 +131,9 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-MEDIA_ROOT =os.path.join(BASE_DIR, "static/images")
-#test data
-EMAIL_HOST='localhost'
-EMAIL_PORT='1025'
-EMAIL_HOST_USER=''
-EMAIL_USE_TLS=False
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
+# test data
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_USE_TLS = False
