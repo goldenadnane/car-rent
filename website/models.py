@@ -59,10 +59,10 @@ class Customer(models.Model):
 
 class Order(models.Model):
 
-    customer = models.CharField(max_length=70, null=True)
-    customerID = models.CharField(max_length=50, null=True)
+    customer = models.CharField(max_length=30,null=False)
+    customerID = models.IntegerField(null=False)
     model = models.CharField(max_length=70, null=True)
-    automobileId = models.CharField(null=True, max_length=10)
+    automobileId = models.IntegerField(null=False)
     price = models.IntegerField(null=True, blank=False)
     startRent = models.DateField(auto_now_add=False, null=True)
     endRent = models.DateField(auto_now_add=False, null=True)
@@ -74,7 +74,7 @@ class Order(models.Model):
 
 
 class canceledOrders(models.Model):
-    customerID = models.CharField(max_length=50, null=True)
-    automobileId = models.CharField(null=True, max_length=10)
+    customerID = models.IntegerField(null=False)
+    automobileId = models.IntegerField(null=False)
     price = models.IntegerField(null=True, blank=False)
     payed = models.BooleanField(null=True, default=False)

@@ -75,11 +75,11 @@ def loadData(request):
 
   
     if not modelData and not yearData:
-        carDatabase = Car.objects.all()[4:]
+        carDatabase = Car.objects.all()
     elif not modelData:
         carDatabase = Car.objects.filter(year_id=yearData)
     else:
-        carDatabase = Car.objects.filter(year_id=yearData, id=modelData )
+        carDatabase = Car.objects.filter(year_id=yearData)
     
     context={'modelData':modelData,
     'yearData':yearData,
@@ -99,17 +99,7 @@ def loadForm(request):
 def carPage(request,pk):
     current  = request.user
     carpage= Car.objects.get(id=pk)
-    if request.method  == 'POST':
-        message_name    =   request.POST['name'] +' '   + " "+request.POST['number']
-        message_email   =   request.POST['email']
-        message   =   request.POST['message']
-        send_mail(
-            message_name,
-            message,
-            message_email,
-            ['testerprojectsdjango@gmail.com'],
-            fail_silently=False
-        )
+
     context = {'carpage':carpage,'current':current}
     return render(request,'car.html',context)
 
@@ -141,7 +131,7 @@ def customerPage(request,pk):
 @login_required(login_url='home.html')
 def updateView(request):
     current       = request.user
-    
+
     if request.method == 'POST':
         updateForm    = CustomerUpdate(request.POST,request.FILES,instance=current.customer)
         if updateForm.is_valid():
@@ -193,7 +183,7 @@ def makeOrder(request, pk):
     
     format    = "%Y/%m/%d"
     if (request.method == 'POST' and endDate > startDate):
-        additions   = 0 
+
         sdate       = datetime.strptime(startDate, format)
         edate       = datetime.strptime(endDate, format)
         daysTotal   = edate - sdate
