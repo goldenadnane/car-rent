@@ -7,7 +7,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Dand cette application , les fonctionnalités suivantes sont présentes : 
+Dans cette application , les fonctionnalités suivantes sont présentes : 
  - Un utilisateur peut :
   -créer un compte , soit via le side admin , soit via le site web .
   -Se connecter après avoir créer son propre compte.
